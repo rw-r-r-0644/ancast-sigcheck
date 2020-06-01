@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #include "ancast.h"
+#include "color.h"
 #include "endian.h"
 #include "rsa.h"
 #include "signatures.h"
@@ -222,33 +223,33 @@ main(int argc,
 	}
 
 	if (load_ancast_image(argv[1])) {
-		printf(">> loading ancast image failed\n");
+		printf(COLOR_RED ">> loading ancast image failed\n" COLOR_DEFAULT);
 		return -1;
 	} else {
 		printf(">> loaded ancast image\n");
 	}
 
 	if (verify_ancast_infoblock_nullpads()) {
-		printf(">> verifying ancast info block null fields failed\n");
+		printf(COLOR_RED ">> verifying ancast info block null fields failed\n" COLOR_DEFAULT);
 		return -2;
 	} else {
 		printf(">> verified ancast info block null fields\n");
 	}
 
 	if (verify_ancast_signature()) {
-		printf(">> verifying ancast signature failed\n");
+		printf(COLOR_RED ">> verifying ancast signature failed\n" COLOR_DEFAULT);
 		return -3;
 	} else {
 		printf(">> verified ancast signature\n");
 	}
 
 	if (verify_ancast_body_checksum()) {
-		printf(">> verifying ancast body checksum failed\n");
+		printf(COLOR_RED ">> verifying ancast body checksum failed\n" COLOR_DEFAULT);
 		return -4;
 	} else {
 		printf(">> verified ancast body checksum\n");
 	}
 
-	printf(">> successfully verified ancast image!\n");
+	printf(COLOR_GREEN ">> successfully verified ancast image!\n" COLOR_DEFAULT);
 	return 0;
 }
