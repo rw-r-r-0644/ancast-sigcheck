@@ -78,6 +78,9 @@ load_ancast_image(char *path)
 	bodyoffs = ftell(f_ancast);
 	printf("info: ancast body at %08X\n", bodyoffs);
 
+	/* ancast header version informations */
+	printf("info: ancast version %u\n", rbe32(&infoblock.version));
+
 	return 0;
 }
 
