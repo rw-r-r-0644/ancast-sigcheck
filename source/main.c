@@ -28,8 +28,8 @@ void
 usage()
 {
 	puts(
-		"ancast-sigcheck v1 by rw-r-r-0644\n\n"
-		"usage: ancast-sigcheck <ancast_image>\n"
+		"ancast_sigcheck v1 by rw-r-r-0644\n\n"
+		"usage: ancast_sigcheck <ancast_image>\n"
 	);
 }
 

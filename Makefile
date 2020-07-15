@@ -5,7 +5,7 @@ CFLAGS	:= -O2
 SRCS	:= $(wildcard source/*.c)
 OBJS	:= $(patsubst source/%.c,build/%.o,$(SRCS))
 
-ancast-sigcheck: $(OBJS)
+ancast_sigcheck: $(OBJS)
 	$(info LINK $@)
 	@gcc -o $@ $(LDFLAGS) $(OBJS)
 
@@ -17,4 +17,4 @@ build/%.o : source/%.c
 clean:
 	$(info CLEAN ...)
 	@rm -rf build
-	@rm -f ancast-sigcheck
+	@rm -f ancast_sigcheck
